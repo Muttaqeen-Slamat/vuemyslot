@@ -1,15 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Button @click="helloText" >
+    <slot name="text">Hello</slot>
+  </Button>
+  <Button>
+    <slot>Click <img src="https://picsum.photos/seed/picsum/200/300" alt="logo"></slot>
+  </Button>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Button from './components/Button.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Button
+    
   }
 }
 </script>
@@ -22,5 +28,25 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+img{
+  width: 2rem;
+  aspect-ratio: 1/1;
+
+}
+button{
+  background-color: chartreuse;
+  border-radius: 12px;
+  padding: 10px;
+  color: crimson;
+  font-size: larger;
+}
+
+:hover button{
+  background-color: crimson;
+  border-radius: 12px;
+  padding: 10px;
+  color: chartreuse;
+  font-size: larger;
 }
 </style>
